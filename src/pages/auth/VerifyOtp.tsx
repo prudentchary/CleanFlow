@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import logo from "@/assets/cleanFlow-logo.png";
 import darklogo from "@/assets/cleanflowlogodarkMode.png";
-import { ROUTES } from "../../routes/paths"; // adjust import path as needed
+import { ROUTES } from "../../routes/paths";
 import Button from "@/components/ui/Button";
 
 export default function VerifyOtp() {
@@ -15,30 +15,30 @@ export default function VerifyOtp() {
   const [otp, setOtp] = useState<string[]>(["", "", "", ""]);
   const [isLoading, setIsLoading] = useState(false);
   const [resendTimer, setResendTimer] = useState(30);
-  const [canResend, setCanResend] = useState(false);
+
+  // Derived state: User can resend when timer reaches 0
+  const canResend = resendTimer === 0;
 
   // References to input elements for manual focus control
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   // Cooldown countdown for Resend Code
   useEffect(() => {
-    if (resendTimer > 0) {
-      const timer = setInterval(() => {
-        setResendTimer((prev) => prev - 1);
-      }, 1000);
-      return () => clearInterval(timer);
-    } else {
-      setCanResend(true);
-    }
+    if (resendTimer <= 0) return;
+
+    const timer = setInterval(() => {
+      setResendTimer((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
   }, [resendTimer]);
 
   // Handle single digit input
   const handleChange = (index: number, value: string) => {
-    // Only allow single numbers
     if (!/^\d*$/.test(value)) return;
 
     const newOtp = [...otp];
-    newOtp[index] = value.slice(-1); // Take last character entered
+    newOtp[index] = value.slice(-1);
     setOtp(newOtp);
 
     // Auto-advance to next box if digit entered
@@ -50,7 +50,7 @@ export default function VerifyOtp() {
   // Handle Backspace navigation
   const handleKeyDown = (
     index: number,
-    e: React.KeyboardEvent<HTMLInputElement>,
+    e: React.KeyboardEvent<HTMLInputElement>
   ) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
@@ -65,15 +65,18 @@ export default function VerifyOtp() {
     if (/^\d{4}$/.test(pastedData)) {
       const digits = pastedData.split("");
       setOtp(digits);
-      inputRefs.current[3]?.focus(); // Focus last box
+      inputRefs.current[3]?.focus();
     }
   };
 
   // Resend OTP trigger
   const handleResend = () => {
     if (!canResend) return;
+
     setResendTimer(30);
-    setCanResend(false);
+    setOtp(["", "", "", ""]); // Reset inputs
+    inputRefs.current[0]?.focus(); // Focus first box
+
     // TODO: Trigger your backend API to resend email code
     alert(`A new verification code has been sent to ${userEmail}`);
   };
@@ -85,7 +88,6 @@ export default function VerifyOtp() {
 
     setTimeout(() => {
       setIsLoading(false);
-      // Route to core dashboard upon success
       navigate(ROUTES.HOME);
     }, 1500);
   };
@@ -95,7 +97,10 @@ export default function VerifyOtp() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-[var(--color-bg)]">
       {/* Brand Logo Header */}
-      <div className="flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform group-hover:scale-105">
+      <Link
+        to={ROUTES.HOME}
+        className="flex items-center justify-center transition-transform hover:scale-105 mb-8"
+      >
         <img
           src={logo}
           alt="CleanFlow"
@@ -106,7 +111,7 @@ export default function VerifyOtp() {
           alt="CleanFlow"
           className="h-10 w-auto hidden [.dark_&]:block"
         />
-      </div>
+      </Link>
 
       {/* Main Card */}
       <div className="w-full max-w-md p-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl text-center">
@@ -117,6 +122,12 @@ export default function VerifyOtp() {
           We sent a 4-digit verification code to <br />
           <strong className="text-[var(--color-text)]">{userEmail}</strong>
         </p>
+        <Link
+          to={ROUTES.CREATE_ACCOUNT}
+          className="inline-block mt-1 text-xs text-[var(--color-primary)] hover:underline font-medium"
+        >
+          Wrong email? Edit address
+        </Link>
 
         <form onSubmit={handleVerify} className="mt-8 space-y-6">
           {/* OTP Digit Inputs */}

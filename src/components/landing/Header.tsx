@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import ThemeToggle from "../ui/ThemeToggle";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../routes/paths"; 
+import { ROUTES } from "@/routes/paths"; 
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -60,7 +60,7 @@ const Header = () => {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
 
-          <Button variant="ghost" size="sm">
+          <Button onClick={()=> navigate(ROUTES.LOGIN)} variant="ghost" size="sm">
             Login
           </Button>
 
@@ -121,7 +121,7 @@ const Header = () => {
           </a>
 
             <div className="mt-2 flex flex-col gap-3 border-t border-slate-200 pt-4">
-              <Button variant="outline" className="w-full">
+              <Button onClick={()=> navigate(ROUTES.LOGIN)} variant="outline" className="w-full">
                 Login
               </Button>
 
