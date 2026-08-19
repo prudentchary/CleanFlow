@@ -1,0 +1,79 @@
+/* ==========================================================
+   CLEANFLOW DESIGN SYSTEM
+   ========================================================== */
+
+:root {
+  /* ========= Brand Colors ========= */
+
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-primary-active: #1E40AF;
+
+  --color-secondary: #06B6D4;
+  --color-secondary-hover: #0891B2;
+
+  --color-accent: #22C55E;
+
+  /* ========= Backgrounds ========= */
+
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+
+  /* ========= Text ========= */
+
+  --color-text: #0F172A;
+  --color-text-secondary: #64748B;
+
+  /* ========= Borders ========= */
+
+  --color-border: #E2E8F0;
+
+  /* ========= Status ========= */
+
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* ========= Radius ========= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ========= Shadows ========= */
+
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.05);
+
+  --shadow-md: 0 4px 12px rgba(15,23,42,.08);
+
+  --shadow-lg: 0 10px 30px rgba(15,23,42,.12);
+
+  /* ========= Animation ========= */
+
+  --transition: 250ms ease;
+}
+
+.dark {
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+
+  --color-text: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+
+  --color-border: #334155;
+
+  --color-primary: #60A5FA;
+  --color-primary-hover: #3B82F6;
+  --color-primary-active: #2563EB;
+
+  --color-secondary: #22D3EE;
+  --color-secondary-hover: #06B6D4;
+
+  --color-accent: #4ADE80;
+
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+}

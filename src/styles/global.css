@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* Add this line to tell Tailwind v4 to look for the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+}
