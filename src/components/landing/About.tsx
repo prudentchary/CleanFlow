@@ -1,17 +1,17 @@
 import Container from "@/components/ui/Container";
 import logo from "@/assets/cleanFlow-logo.png";
+import darklogo from "@/assets/cleanflowlogodarkMode.png";
 
 const About = () => {
   return (
     <section id="about" className="py-10 lg:py-15">
       <Container>
-        
-          <div className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-wider text-[var(--color-primary)]">
-              About CleanFlow
-            </span>
-          </div>
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="text-center">
+          <span className="text-sm font-semibold uppercase tracking-wider text-[var(--color-primary)]">
+            About CleanFlow
+          </span>
+        </div>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Content */}
           <div className="max-w-xl ">
             <h2 className="text-3xl font-bold tracking-tight text-[var(--color-text)] sm:text-4xl">
@@ -33,9 +33,17 @@ const About = () => {
           {/* Visual */}
           <div className="flex justify-center lg:justify-end">
             <div className="flex aspect-[4/3] w-full max-w-lg flex-col items-center justify-center rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-[var(--shadow-md)]">
-              {/* CleanFlow logo placeholder */}
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-2xl font-bold text-[var(--color-primary)]">
-                <img src={logo} alt="Clean flow logo" />
+              <div className="flex h-40 w-40 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-2xl font-bold text-[var(--color-primary)]">
+                <img
+                  src={logo}
+                  alt="CleanFlow"
+                  className="h-10 w-auto [.dark_&]:hidden"
+                />
+                <img
+                  src={darklogo}
+                  alt="CleanFlow"
+                  className="h-10 w-auto hidden [.dark_&]:block"
+                />
               </div>
 
               <h3 className="mt-5 text-xl font-semibold text-[var(--color-text)]">

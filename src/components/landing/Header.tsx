@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import ThemeToggle from "../ui/ThemeToggle";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "@/routes/paths"; 
+import { ROUTES } from "@/routes/paths";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,10 +15,18 @@ const Header = () => {
   return (
     <header className="border-b border-slate-200 bg-[var(--color-background)]">
       <Container className="flex h-16 items-center justify-between">
-      <a href="/" className="flex items-center">
-  <img src={logo} alt="CleanFlow" className="h-10 w-auto [.dark_&]:hidden" />
-  <img src={darklogo} alt="CleanFlow" className="h-10 w-auto hidden [.dark_&]:block" />
-</a>
+        <a href="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="CleanFlow"
+            className="h-10 w-auto [.dark_&]:hidden"
+          />
+          <img
+            src={darklogo}
+            alt="CleanFlow"
+            className="h-10 w-auto hidden [.dark_&]:block"
+          />
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
@@ -60,11 +68,19 @@ const Header = () => {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
 
-          <Button onClick={()=> navigate(ROUTES.LOGIN)} variant="ghost" size="sm">
+          <Button
+            onClick={() => navigate(ROUTES.LOGIN)}
+            variant="ghost"
+            size="sm"
+          >
             Login
           </Button>
 
-          <Button onClick={() => navigate(ROUTES.CREATE_ACCOUNT)} variant="solid" size="sm">
+          <Button
+            onClick={() => navigate(ROUTES.CREATE_ACCOUNT)}
+            variant="solid"
+            size="sm"
+          >
             Get Started
           </Button>
         </div>
@@ -113,19 +129,28 @@ const Header = () => {
             >
               Pricing
             </a>
-             <a
-            href="#contact"
-            className="text-medium font-medium text-slate-600 transition-colors hover:text-[var(--color-primary)]"
-          >
-            Contact-Us
-          </a>
+            <a
+              href="#contact"
+              className="text-medium font-medium text-slate-600 transition-colors hover:text-[var(--color-primary)]"
+            >
+              Contact-Us
+            </a>
 
             <div className="mt-2 flex flex-col gap-3 border-t border-slate-200 pt-4">
-              <Button onClick={()=> navigate(ROUTES.LOGIN)} variant="outline" className="w-full">
+              <Button
+                onClick={() => navigate(ROUTES.LOGIN)}
+                variant="outline"
+                className="w-full"
+              >
                 Login
               </Button>
 
-              <Button onClick={() => navigate(ROUTES.CREATE_ACCOUNT)} className="w-full">Get Started</Button>
+              <Button
+                onClick={() => navigate(ROUTES.CREATE_ACCOUNT)}
+                className="w-full"
+              >
+                Get Started
+              </Button>
             </div>
           </div>
         </nav>

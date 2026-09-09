@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import logo from "@/assets/cleanFlow-logo.png";
 import darklogo from "@/assets/cleanflowlogodarkMode.png";
-import { ROUTES } from "@/routes/paths"; // adjust import path as needed
+import { ROUTES } from "@/routes/paths"; 
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { useToast } from "@/context/ToastContext";
@@ -55,7 +55,7 @@ export default function SignIn() {
     setTimeout(() => {
       setIsLoading(false);
       // Route user to their dashboard upon successful login
-      navigate(ROUTES.HOME);
+      navigate(ROUTES.ADMIN_DASHBOARD);
     }, 1500);
   };
   const handleLogin = () => {
@@ -162,7 +162,7 @@ export default function SignIn() {
             </a>
           </div>
 
-          <Button onClick={handleLogin}
+          <Button onClick={handleLogin }
             type="submit"
             variant="solid"
             className="w-full mt-2"

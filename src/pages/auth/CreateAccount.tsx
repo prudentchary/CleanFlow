@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { ROUTES } from "../../routes/paths"; // adjust step-up path if needed
+import { ROUTES } from "../../routes/paths"; 
 import Button from "@/components/ui/Button";
-import Input from "@/components/ui/Input"; // import your custom Input component
+import Input from "@/components/ui/Input";
 import logo from "@/assets/cleanFlow-logo.png";
 import darklogo from "@/assets/cleanflowlogodarkMode.png";
 import { useToast } from "@/context/ToastContext";
@@ -32,7 +32,7 @@ export default function CreateAccount() {
   const hasUppercase = /[A-Z]/.test(formData.password);
   const hasSymbol = /[^a-zA-Z0-9\s]/.test(formData.password);
   const isUpToEightChars = formData.password.length >= 8;
-  const hasNumber = /[0-9]/.test(formData.password); // Added number check
+  const hasNumber = /[0-9]/.test(formData.password); 
   const isPasswordValid =
     hasUppercase && hasSymbol && hasNumber && isUpToEightChars;
 
@@ -115,6 +115,7 @@ export default function CreateAccount() {
           >
             Change
           </Link>
+          
         </div>
 
         {/* Signup Form */}
@@ -223,6 +224,12 @@ export default function CreateAccount() {
             className="text-[var(--color-primary)] font-medium hover:underline"
           >
             Sign in
+          </Link>
+          <Link
+            to={ROUTES.RESET_PASSWORD}
+            className="text-[var(--color-primary)] font-medium hover:underline"
+          >
+            Reset Password
           </Link>
         </p>
       </div>
