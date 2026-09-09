@@ -80,7 +80,7 @@ export default function StaffDashboard() {
 
   // Shift & Clock State
   const [isClockedIn, setIsClockedIn] = useState(true);
-  const [clockInTime, setClockInTime] = useState<string | null>("08:00 AM");
+  const [, setClockInTime] = useState<string | null>("08:00 AM");
   const [isClockModalOpen, setIsClockModalOpen] = useState(false);
 
   // Live Order Queue
@@ -572,7 +572,8 @@ export default function StaffDashboard() {
               Cancel
             </Button>
             <Button
-              variant={isClockedIn ? "outline" : "primary"}
+
+              variant={isClockedIn ? "outline" : "solid"}
               onClick={handleConfirmShiftToggle}
             >
               {isClockedIn ? "Confirm Clock Out" : "Confirm Clock In"}

@@ -25,7 +25,7 @@ import NewOrder from "@/pages/staff/NewOrder";
 import ProcessingQueue from "@/pages/staff/ProcessingQeue";
 import Pickups from "@/pages/staff/Pickups";
 import Orders from "@/pages/staff/Orders";
-import Referrals from "@/pages/staff/referals";
+import Referrals from "@/pages/staff/Referrals";
 import Registers from "@/pages/staff/Registers";
 import Tasks from "@/pages/staff/Tasks";
 
