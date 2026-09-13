@@ -45,7 +45,7 @@ export const NAV_ITEMS: NavItem[] = [
   name: "Service & Pricing",
   path: ROUTES.SERVICES_STORE,
   icon: Shirt, 
-  roles: ["admin", "staff", "customer"], 
+  roles: ["admin", "staff"], 
 },
   {
     name: "Bookings & Orders",

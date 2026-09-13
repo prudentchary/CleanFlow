@@ -5,7 +5,7 @@ import Header from "@/components/common/Header";
 
 export default function AppLayout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const currentUserRole = "admin"; // Mock user role (replace with Auth Context later, e.g., const { role } = useAuth();)
+  const currentUserRole = "staff"; // Mock user role (replace with Auth Context later, e.g., const { role } = useAuth();)
 
   
 

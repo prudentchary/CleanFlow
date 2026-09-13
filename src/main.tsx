@@ -1,19 +1,26 @@
-// src/main.tsx
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
 import "./styles/global.css";
 import "./styles/theme.css";
-import { ToastProvider } from "./context/ToastContext";
+import App from "./App";
+import { ToastProvider } from "@/context/ToastContext";
+import { ServiceProvider } from "@/context/ServiceContext";
+import { CustomerProvider } from "@/context/CustomerContext";
+import { StaffProvider } from "@/context/StaffContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ToastProvider>
     <BrowserRouter>
-      <App />
+      <ToastProvider>
+        <ServiceProvider>
+          <CustomerProvider>
+            <StaffProvider>
+              <App />
+            </StaffProvider>
+          </CustomerProvider>
+        </ServiceProvider>
+      </ToastProvider>
     </BrowserRouter>
-    </ToastProvider>
   </React.StrictMode>
 );

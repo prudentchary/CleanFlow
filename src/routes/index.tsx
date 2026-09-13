@@ -14,7 +14,7 @@ import ChangePassword from "@/pages/auth/ResetPassword";
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import StaffOnboarding from "@/pages/admin/StaffOnboarding";
 import AdminBookings from "@/pages/admin/AdminBookings";
-import ServiceStore from "@/pages/common_pages/ServiceStore";
+import ServiceStore from "@/pages/admin/ServiceStore";
 import AdminCustomersManagement from "@/pages/admin/Customers";
 import AdminFinancials from "@/pages/admin/Financials";
 import AdminInventoryServices from "@/pages/admin/Inventory";
