@@ -10,10 +10,10 @@ import {
   Shirt,
   Users,
   CheckSquare,
-  Search,
+  
   PackageCheck,
   Gift,
-  Clock,
+  // Clock,
 } from "lucide-react";
 import { ROUTES } from "@/routes/paths";
 
@@ -45,7 +45,7 @@ export const NAV_ITEMS: NavItem[] = [
   name: "Service & Pricing",
   path: ROUTES.SERVICES_STORE,
   icon: Shirt, 
-  roles: ["admin", "staff"], 
+  roles: ["admin"], 
 },
   {
     name: "Bookings & Orders",
@@ -100,24 +100,19 @@ export const NAV_ITEMS: NavItem[] = [
     icon: PackageCheck,
     roles: ["staff"],
   },
-  {
-    name: "Orders",
-    path: ROUTES.STAFF_ORDERS,
-    icon: Search,
-    roles: ["staff"],
-  },
+  // {
+  //   name: "Orders",
+  //   path: ROUTES.STAFF_ORDERS,
+  //   icon: Search,
+  //   roles: [""],
+  // },
   {
     name: "Referrals",
     path: ROUTES.STAFF_REFERRALS,
     icon: Gift,
     roles: ["staff"],
   },
-  {
-    name: "Registers",
-    path: ROUTES.STAFF_REGISTERS,
-    icon: Clock,
-    roles: ["staff"],
-  },
+  
   {
     name: "Tasks",
     path: ROUTES.STAFF_TASKS,

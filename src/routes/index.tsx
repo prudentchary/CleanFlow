@@ -26,7 +26,6 @@ import ProcessingQueue from "@/pages/staff/ProcessingQeue";
 import Pickups from "@/pages/staff/Pickups";
 import Orders from "@/pages/staff/Orders";
 import Referrals from "@/pages/staff/Referrals";
-import Registers from "@/pages/staff/Registers";
 import Tasks from "@/pages/staff/Tasks";
 
 import CustomerDashboard from "@/pages/customer/CustomerDashboard";
@@ -102,7 +101,6 @@ export default function AppRouter() {
         <Route path={ROUTES.STAFF_PICKUPS} element={<Pickups />} />
         <Route path={ROUTES.STAFF_ORDERS} element={<Orders />} />
         <Route path={ROUTES.STAFF_REFERRALS} element={<Referrals />} />
-        <Route path={ROUTES.STAFF_REGISTERS} element={<Registers />} />
         <Route path={ROUTES.STAFF_TASKS} element={<Tasks />} />
 
         {/* Shared App Views */}
